@@ -1,0 +1,221 @@
+
+/*
+ * COMP 4537 Lab 2
+ * External stylesheet
+ *
+ * ChatGPT was used as a learning aid.
+ */
+
+:root {
+
+    /* Layout configuration */
+    --container-width: 900px;
+    --container-percentage: 90%;
+    --container-margin: 40px;
+    --container-padding: 30px;
+
+    /* Spacing */
+    --spacing-small: 10px;
+    --spacing-medium: 15px;
+    --spacing-large: 20px;
+    --spacing-footer: 40px;
+
+    /* Element dimensions */
+    --textarea-min-height: 100px;
+    --button-padding-vertical: 10px;
+    --button-padding-horizontal: 18px;
+    --note-padding: 15px;
+
+    /* Borders */
+    --border-width: 1px;
+    --border-radius: 5px;
+    --container-border-radius: 8px;
+
+    /* Colors */
+    --color-background: #f5f5f5;
+    --color-surface: #ffffff;
+    --color-text: #333333;
+    --color-border: #cccccc;
+    --color-button: #333333;
+    --color-button-text: #ffffff;
+
+    /* Typography */
+    --font-family: Arial, sans-serif;
+}
+
+
+/* General page styling */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+
+/* Main content container */
+
+.container {
+    width: var(--container-percentage);
+    max-width: var(--container-width);
+
+    margin: var(--container-margin) auto;
+    padding: var(--container-padding);
+
+    background-color: var(--color-surface);
+
+    border-radius: var(--container-border-radius);
+}
+
+h1 {
+    margin-top: 0;
+}
+
+
+/* Page header and status */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: var(--spacing-large);
+    flex-wrap: wrap;
+}
+
+#save-status,
+#retrieve-status {
+    margin-left: auto;
+    text-align: right;
+}
+
+
+/* Landing page navigation */
+
+.navigation {
+    display: flex;
+    gap: var(--spacing-medium);
+    margin-top: var(--container-padding);
+}
+
+
+/* Buttons and navigation links */
+
+.nav-button,
+button {
+    display: inline-block;
+
+    padding:
+        var(--button-padding-vertical)
+        var(--button-padding-horizontal);
+
+    border: none;
+    border-radius: var(--border-radius);
+
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+
+    font-family: inherit;
+    font-size: inherit;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-button:hover,
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* Writer notes */
+
+.note {
+    display: flex;
+    align-items: flex-start;
+
+    gap: var(--spacing-small);
+    margin-bottom: var(--spacing-medium);
+}
+
+.note textarea {
+    flex: 1;
+    min-width: 0;
+    min-height: var(--textarea-min-height);
+
+    padding: var(--spacing-small);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: var(--border-radius);
+
+    font-family: inherit;
+    font-size: inherit;
+
+    resize: vertical;
+}
+
+
+/* Reader notes */
+
+.reader-note {
+    margin-bottom: var(--spacing-medium);
+    padding: var(--note-padding);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: var(--border-radius);
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+
+/* Add button */
+
+#add-button {
+    margin-top: var(--spacing-small);
+}
+
+
+/* Back navigation */
+
+footer {
+    margin-top: var(--spacing-footer);
+}
+
+
+/* Responsive layout */
+
+@media (max-width: 600px) {
+
+    .note {
+        flex-direction: column;
+    }
+
+    .note textarea {
+        width: 100%;
+    }
+
+    .page-header {
+        align-items: flex-start;
+    }
+
+    #save-status,
+    #retrieve-status {
+        margin-left: 0;
+        text-align: left;
+    }
+
+}
