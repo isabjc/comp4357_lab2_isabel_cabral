@@ -13,7 +13,7 @@ import {
     SAVE_INTERVAL_MS
 } from "./config.js";
 
-import { Note } from "./Note.js";
+import { Note } from "./note.js";
 
 
 export class NoteWriter {
